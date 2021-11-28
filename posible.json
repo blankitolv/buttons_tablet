@@ -1,0 +1,819 @@
+[
+     {
+          "id":1,
+          "code":"KeyA",
+          "key":65,
+          "keyCode":"A",
+          "keyNum":"4",
+          "comment":"<span> A </span> and <span> a </span>"
+     },
+     {
+          "id":2,
+          "code":"AltLeft",
+          "key":18,
+          "keyCode":"ALT",
+          "keyNum":"226",
+          "comment":"Alias for LEFT_ALT; Alt is also known as Option (Mac)"
+     },
+     {
+          "id":3,
+          "code":"MetaLeft",
+          "key":91,
+          "keyCode":"APPLICATION",
+          "keyNum":"101",
+          "comment":"windows key"
+     },
+     {
+          "id":4,
+          "code":"KeyB",
+          "key":66,
+          "keyCode":"B",
+          "keyNum":"5",
+          "comment":"B and b"
+     },
+     {
+          "id":5,
+          "code":"Backquote",
+          "key":220,
+          "keyCode":"BACKSLASH",
+          "keyNum":"49",
+          "comment" : " \\ and |"
+     },
+     {
+          "id":6,
+          "code":"Space",
+          "key":32,
+          "keyCode":"BACKSPACE",
+          "keyNum":"42",
+          "comment":"Delete backward (Backspace)"
+     },
+     {
+          "id":7,
+          "code":"KeyC",
+          "key":67,
+          "keyCode":"C",
+          "keyNum":"6",
+          "comment":"c and C"
+     },
+     {
+          "id":8,
+          "code":"CapsLock",
+          "key":20,
+          "keyCode":"CAPS_LOCK",
+          "keyNum":"57",
+          "comment":"Caps Lock"
+     },
+     {
+          "id":9,
+          "code":"Comma",
+          "key":188,
+          "keyCode":"COMMA",
+          "keyNum":"54",
+          "comment":", and <"
+     },
+     {
+          "id":10,
+          "code":"",
+          "key":-1,
+          "keyCode":"COMMAND",
+          "keyNum":"227",
+          "comment":"Labeled as Command on Mac keyboards, with a clover glyph"
+     },
+     {
+          "id":11,
+          "code":"ControlLeft",
+          "key":17,
+          "keyCode":"CONTROL",
+          "keyNum":"224",
+          "comment":"Alias for LEFT_CONTROL"
+     },
+     {
+          "id":12,
+          "code":"KeyD",
+          "key":68,
+          "keyCode":"D",
+          "keyNum":"7",
+          "comment":"d and D"
+     },
+     {
+          "id":13,
+          "code":"Backspace",
+          "key":8,
+          "keyCode":"DELETE",
+          "keyNum":"76",
+          "comment":"Delete forward"
+     },
+     {
+          "id":14,
+          "code":"ArrowDown",
+          "key":40,
+          "keyCode":"DOWN_ARROW",
+          "keyNum":"81",
+          "comment":"Move the cursor down"
+     },
+     {
+          "id":15,
+          "code":"KeyE",
+          "key":69,
+          "keyCode":"E",
+          "keyNum":"8",
+          "comment":"e and E"
+     },
+     {
+          "id":16,
+          "code":"BracketRight",
+          "key":187,
+          "keyCode":"EIGHT",
+          "keyNum":"37",
+          "comment":"8 and *"
+     },
+     {
+          "id":17,
+          "code":"End",
+          "key":35,
+          "keyCode":"END",
+          "keyNum":"77",
+          "comment":"End (often moves to end of line)"
+     },
+     {
+          "id":18,
+          "code":"Enter",
+          "key":13,
+          "keyCode":"ENTER",
+          "keyNum":"40",
+          "comment":"Enter (Return)"
+     },
+     {
+          "id":19,
+          "code":"Digit0",
+          "key":48,
+          "keyCode":"EQUALS",
+          "keyNum":"46",
+          "comment":" =` and ``+"
+     },
+     {
+          "id":20,
+          "code":"Escape",
+          "key":27,
+          "keyCode":"ESCAPE",
+          "keyNum":"41",
+          "comment":"Escape"
+     },
+     {
+          "id":21,
+          "code":"KeyF",
+          "key":70,
+          "keyCode":"F",
+          "keyNum":"9",
+          "comment":"f and F"
+     },
+     {
+          "id":22,
+          "code":"F1",
+          "key":112,
+          "keyCode":"F1",
+          "keyNum":"58",
+          "comment":"Function key F1"
+     },
+     {
+          "id":23,
+          "code":"F10",
+          "key":121,
+          "keyCode":"F10",
+          "keyNum":"67",
+          "comment":"Function key F10"
+     },
+     {
+          "id":24,
+          "code":"F11",
+          "key":122,
+          "keyCode":"F11",
+          "keyNum":"68",
+          "comment":"Function key F11"
+     },
+     {
+          "id":25,
+          "code":"F12",
+          "key":123,
+          "keyCode":"F12",
+          "keyNum":"69",
+          "comment":"Function key F12"
+     },
+     {
+          "id":26,
+          "code":"-1",
+          "key":-1,
+          "keyCode":"F13",
+          "keyNum":"104",
+          "comment":"Function key F13 (Mac)"
+     },
+     {
+          "id":27,
+          "code":"-1",
+          "key":-1,
+          "keyCode":"F14",
+          "keyNum":"105",
+          "comment":"Function key F14 (Mac)"
+     },
+     {
+          "id":28,
+          "code":"-1",
+          "key":-1,
+          "keyCode":"F15",
+          "keyNum":"106",
+          "comment":"Function key F15 (Mac)"
+     },
+     {
+          "id":29,
+          "code":"-1",
+          "key":-1,
+          "keyCode":"F16",
+          "keyNum":"107",
+          "comment":"Function key F16 (Mac)"
+     },
+     {
+          "id":30,
+          "code":"-1",
+          "key":-1,
+          "keyCode":"F17",
+          "keyNum":"108",
+          "comment":"Function key F17 (Mac)"
+     },
+     {
+          "id":31,
+          "code":"-1",
+          "key":-1,
+          "keyCode":"F18",
+          "keyNum":"109",
+          "comment":"Function key F18 (Mac)"
+     },
+     {
+          "id":32,
+          "code":"-1",
+          "key":-1,
+          "keyCode":"F19",
+          "keyNum":"110",
+          "comment":"Function key F19 (Mac)"
+     },
+     {
+          "id":33,
+          "code":"F2",
+          "key":113,
+          "keyCode":"F2",
+          "keyNum":"59",
+          "comment":"Function key F2"
+     },
+     {
+          "id":34,
+          "code":"-1",
+          "key":-1,
+          "keyCode":"F20",
+          "keyNum":"111",
+          "comment":"Function key F20"
+     },
+     {
+          "id":35,
+          "code":"-1",
+          "key":-1,
+          "keyCode":"F21",
+          "keyNum":"112",
+          "comment":"Function key F21"
+     },
+     {
+          "id":36,
+          "code":"-1",
+          "key":-1,
+          "keyCode":"F22",
+          "keyNum":"113",
+          "comment":"Function key F22"
+     },
+     {
+          "id":37,
+          "code":"-1",
+          "key":-1,
+          "keyCode":"F23",
+          "keyNum":"114",
+          "comment":"Function key F23"
+     },
+     {
+          "id":38,
+          "code":"-1",
+          "key":-1,
+          "keyCode":"F24",
+          "keyNum":"115",
+          "comment":"Function key F24"
+     },
+     {
+          "id":39,
+          "code":"F3",
+          "key":114,
+          "keyCode":"F3",
+          "keyNum":"60",
+          "comment":"Function key F3"
+     },
+     {
+          "id":40,
+          "code":"F4",
+          "key":115,
+          "keyCode":"F4",
+          "keyNum":"61",
+          "comment":"Function key F4"
+     },
+     {
+          "id":41,
+          "code":"F5",
+          "key":116,
+          "keyCode":"F5",
+          "keyNum":"62",
+          "comment":"Function key F5"
+     },
+     {
+          "id":42,
+          "code":"F6",
+          "key":117,
+          "keyCode":"F6",
+          "keyNum":"63",
+          "comment":"Function key F6"
+     },
+     {
+          "id":43,
+          "code":"F7",
+          "key":118,
+          "keyCode":"F7",
+          "keyNum":"64",
+          "comment":"Function key F7"
+     },
+     {
+          "id":44,
+          "code":"F8",
+          "key":119,
+          "keyCode":"F8",
+          "keyNum":"65",
+          "comment":"Function key F8"
+     },
+     {
+          "id":45,
+          "code":"F9",
+          "key":120,
+          "keyCode":"F9",
+          "keyNum":"66",
+          "comment":"Function key F9"
+     },
+     {
+          "id":46,
+          "code":"Digit5",
+          "key":18,
+          "keyCode":"FIVE",
+          "keyNum":"34",
+          "comment":"5 and %"
+     },
+     {
+          "id":47,
+          "code":"Digit7",
+          "key":55,
+          "keyCode":"FORWARD_SLASH",
+          "keyNum":"56",
+          "comment":"/ and ?"
+     },
+     {
+          "id":48,
+          "code":"Digit4",
+          "key":52,
+          "keyCode":"FOUR",
+          "keyNum":"33",
+          "comment":"4 and $"
+     },
+     {
+          "id":49,
+          "code":"KeyG",
+          "key":71,
+          "keyCode":"G",
+          "keyNum":"10",
+          "comment":"g and G"
+     },
+     {
+          "id":50,
+          "code":"-1",
+          "key":-1,
+          "keyCode":"GRAVE_ACCENT",
+          "keyNum":"53",
+          "comment":"` and ~"
+     },
+     {
+          "id":51,
+          "code":"MetaLeft",
+          "key":91,
+          "keyCode":"GUI",
+          "keyNum":"227",
+          "comment":"Alias for LEFT_GUI; GUI is also known as the Windows key, Command (Mac), or Meta"
+     },
+     {
+          "id":52,
+          "code":"KeyH",
+          "key":72,
+          "keyCode":"H",
+          "keyNum":"11",
+          "comment":"h and H"
+     },
+     {
+          "id":53,
+          "code":"Home",
+          "key":36,
+          "keyCode":"HOME",
+          "keyNum":"74",
+          "comment":"Home (often moves to beginning of line)"
+     },
+     {
+          "id":54,
+          "code":"KeyI",
+          "key":73,
+          "keyCode":"I",
+          "keyNum":"12",
+          "comment":"i and I"
+     },
+     {
+          "id":55,
+          "code":"Insert",
+          "key":45,
+          "keyCode":"INSERT",
+          "keyNum":"73",
+          "comment":"Insert"
+     },
+     {
+          "id":56,
+          "code":"KeyJ",
+          "key":18,
+          "keyCode":"J",
+          "keyNum":"13",
+          "comment":"j and J"
+     },
+     {
+          "id":57,
+          "code":"KeyK",
+          "key":75,
+          "keyCode":"K",
+          "keyNum":"14",
+          "comment":"k and K"
+     },
+     {
+          "id":58,
+          "code":"NumpadMultiply",
+          "key":106,
+          "keyCode":"KEYPAD_ASTERISK",
+          "keyNum":"85",
+          "comment":"Keypad *"
+     },
+     {
+          "id":59,
+          "code":"Backquote",
+          "key":220,
+          "keyCode":"KEYPAD_BACKSLASH",
+          "keyNum":"100",
+          "comment":"Keypad \\ and | (Non-US)"
+     },
+     {
+          "id":60,
+          "code":"Numpad8",
+          "key":104,
+          "keyCode":"KEYPAD_EIGHT",
+          "keyNum":"96",
+          "comment":"Keypad 8 and Up Arrow"
+     },
+     {
+          "id":61,
+          "code":"NumpadEnter",
+          "key":13,
+          "keyCode":"KEYPAD_ENTER",
+          "keyNum":"88",
+          "comment":"Keypad Enter"
+     },
+     {
+          "id":62,
+          "code":"-1",
+          "key":-1,
+          "keyCode":"KEYPAD_EQUALS",
+          "keyNum":"103",
+          "comment":"Keypad EQUAL (Mac)"
+     },
+     {
+          "id":63,
+          "code":"Numpad5",
+          "key":101,
+          "keyCode":"KEYPAD_FIVE",
+          "keyNum":"93",
+          "comment":"Keypad 5"
+     },
+     {
+          "id":64,
+          "code":"NumpadDivide",
+          "key":111,
+          "keyCode":"KEYPAD_FORWARD_SLASH",
+          "keyNum":"84",
+          "comment":"Keypad /"
+     },
+     {
+          "id":65,
+          "code":"Numpad4",
+          "key":100,
+          "keyCode":"KEYPAD_FOUR",
+          "keyNum":"92",
+          "comment":"Keypad 4 and Left Arrow"
+     },
+     {
+          "id":66,
+          "code":"NumpadSubtract",
+          "key":109,
+          "keyCode":"KEYPAD_MINUS",
+          "keyNum":"86",
+          "comment":"Keyapd -"
+     },
+     {
+          "id":67,
+          "code":"Numpad9",
+          "key":105,
+          "keyCode":"KEYPAD_NINE",
+          "keyNum":"97",
+          "comment":"Keypad 9 and PgUp"
+     },
+     {
+          "id":68,
+          "code":"NumLock",
+          "key":144,
+          "keyCode":"KEYPAD_NUMLOCK",
+          "keyNum":"83",
+          "comment":"Num Lock (Clear on Mac)"
+     },
+     {
+          "id":69,
+          "code":"Numpad1",
+          "key":97,
+          "keyCode":"KEYPAD_ONE",
+          "keyNum":"89",
+          "comment":"Keypad 1 and End"
+     },
+     {
+          "id":70,
+          "code":"NumpadDecimal",
+          "key":110,
+          "keyCode":"KEYPAD_PERIOD",
+          "keyNum":"99",
+          "comment":"Keypad . and Del"
+     },
+     {
+          "id":71,
+          "code":"NumpadAdd",
+          "key":107,
+          "keyCode":"KEYPAD_PLUS",
+          "keyNum":"87",
+          "comment":"Keypad +"
+     },
+     {
+          "id":72,
+          "code":"Numpad7",
+          "key":103,
+          "keyCode":"KEYPAD_SEVEN",
+          "keyNum":"95",
+          "comment":"Keypad 7 and Home"
+     },
+     {
+          "id":73,
+          "code":"Numpad6",
+          "key":102,
+          "keyCode":"KEYPAD_SIX",
+          "keyNum":"94",
+          "comment":"Keypad 6 and Right Arrow"
+     },
+     {
+          "id":74,
+          "code":"Numpad3",
+          "key":99,
+          "keyCode":"KEYPAD_THREE",
+          "keyNum":"91",
+          "comment":"Keypad 3 and PgDn"
+     },
+     {
+          "id":75,
+          "code":"Numpad2",
+          "key":98,
+          "keyCode":"KEYPAD_TWO",
+          "keyNum":"90",
+          "comment":"Keypad 2 and Down Arrow"
+     },
+     {
+          "id":76,
+          "code":"Numpad0",
+          "key":96,
+          "keyCode":"KEYPAD_ZERO",
+          "keyNum":"98",
+          "comment":"Keypad 0 and Ins"
+     },
+     {
+          "id":77,
+          "code":"KeyL",
+          "key":76,
+          "keyCode":"L",
+          "keyNum":"15",
+          "comment":"l and L"
+     },
+     {
+          "id":78,
+          "code":"AltLeft",
+          "key":226,
+          "keyCode":"LEFT_ALT",
+          "keyNum":"226",
+          "comment":"Alt modifier left of the spacebar"
+     },
+     {
+          "id":79,
+          "code":-1,
+          "key":-1,
+          "keyCode":"LEFT_ARROW",
+          "keyNum":"80",
+          "comment":"Move the cursor left"
+     },
+     {
+          "id":80,
+          "code":"Quote",
+          "key":222,
+          "keyCode":"LEFT_BRACKET",
+          "keyNum":"47",
+          "comment":"[ and {"
+     },
+     {
+          "id":81,
+          "code":"ControlLeft",
+          "key":17,
+          "keyCode":"LEFT_CONTROL",
+          "keyNum":"224",
+          "comment":"Control modifier left of the spacebar"
+     },
+     {
+          "id":82,
+          "code":-1,
+          "key":-1,
+          "keyCode":"LEFT_GUI",
+          "keyNum":"227",
+          "comment":"GUI modifier left of the spacebar"
+     },
+     {
+          "id":83,
+          "code":"ShiftLeft",
+          "key":16,
+          "keyCode":"LEFT_SHIFT",
+          "keyNum":"225",
+          "comment":"Shift modifier left of the spacebar"
+     },
+     {
+          "id":84,
+          "code":"KeyM",
+          "key":77,
+          "keyCode":"M",
+          "keyNum":"16",
+          "comment":"m and M"
+     },
+     {
+          "id":85,
+          "code":"Slash",
+          "key":189,
+          "keyCode":"MINUS",
+          "keyNum":"45",
+          "comment":"-` and ``_"
+     },
+     {
+          "id":86,
+          "code":"KeyN",
+          "key":78,
+          "keyCode":"N",
+          "keyNum":"17",
+          "comment":"n and N"
+     },
+     {
+          "id":87,
+          "code":"Digit9",
+          "key":57,
+          "keyCode":"NINE",
+          "keyNum":"38",
+          "comment":"9 and ("
+     },
+     {
+          "id":88,
+          "code":"KeyO",
+          "key":79,
+          "keyCode":"O",
+          "keyNum":"18",
+          "comment":"o and O"
+     },
+     {
+          "id":89,
+          "code":"Digit1",
+          "key":49,
+          "keyCode":"ONE",
+          "keyNum":"30",
+          "comment":"1 and !"
+     },
+     {
+          "id":90,
+          "code":"-1",
+          "key":-1,
+          "keyCode":"OPTION",
+          "keyNum":"226",
+          "comment":"Labeled as Option on some Mac keyboards"
+     },
+     {
+          "id":91,
+          "code":"KeyP",
+          "key":80,
+          "keyCode":"P",
+          "keyNum":"19",
+          "comment":"p and P"
+     },
+     {
+          "id":92,
+          "code":"PageDown",
+          "key":34,
+          "keyCode":"PAGE_DOWN",
+          "keyNum":"78",
+          "comment":"Go forward one page"
+     },
+     {
+          "id":93,
+          "code":"PageUp",
+          "key":33,
+          "keyCode":"PAGE_UP",
+          "keyNum":"75",
+          "comment":"Go back one page"
+     },
+     {
+          "id":94,
+          "code":"Pause",
+          "key":19,
+          "keyCode":"PAUSE",
+          "keyNum":"72",
+          "comment":"Pause (Break)"
+     },
+     {
+          "id":95,
+          "code":"IntlBackslash",
+          "key":226,
+          "keyCode":"PERIOD",
+          "keyNum":"55",
+          "comment":". and >"
+     },
+     {
+          "id":96,
+          "code":"-1",
+          "key":-1,
+          "keyCode":"POUND",
+          "keyNum":"50",
+          "comment":"# and ~ (Non-US keyboard)"
+     },
+     {
+          "id":97,
+          "code":"-1",
+          "key":-1,
+          "keyCode":"POWER",
+          "keyNum":"102",
+          "comment":"Power (Mac)"
+     },
+     {
+          "id":98,
+          "code":"-1",
+          "key":-1,
+          "keyCode":"PRINT_SCREEN",
+          "keyNum":"70",
+          "comment":"Print Screen (SysRq)"
+     },
+     {
+          "id":99,
+          "code":"KeyQ",
+          "key":81,
+          "keyCode":"Q",
+          "keyNum":"20",
+          "comment":"q and Q"
+     },
+     {
+          "id":100,
+          "code":"Minus",
+          "key":219,
+          "keyCode":"QUOTE",
+          "keyNum":"52",
+          "comment":" ' and \" "
+     },
+     {
+          "id":101,
+          "code":"KeyR",
+          "key":82,
+          "keyCode":"R",
+          "keyNum":"21",
+          "comment":"r and R"
+     },
+     {
+          "id":102,
+          "code":"Enter",
+          "key":13,
+          "keyCode":"RETURN",
+          "keyNum":"40",
+          "comment":"Alias for ENTER"
+     }
+]
+
