@@ -43,7 +43,8 @@ const generaEventosA_Button=()=>{
                console.log ('desdehasta');
                console.log (array_desdeHasta);
                allBotones.forEach(unBoton => {
-                    if (unBoton.id==array_desdeHasta[0] || unBoton.id==array_desdeHasta[1]){
+                    // if (unBoton.id==array_desdeHasta[0] || unBoton.id==array_desdeHasta[1]){
+                    if (unBoton.id>=array_desdeHasta[0] && unBoton.id<=array_desdeHasta[1]){
                          console.log ('uno');
                          unBoton.firstElementChild.className='a_verde'
                     } else {
