@@ -24,12 +24,12 @@ const generaEventosA_Button=()=>{
           element.addEventListener('click',()=>{
                // si el primer elemento de a tiene a_verde
                // se lo sacamos
-               if (element.firstElementChild.className=='a_verde') {
-                    element.firstElementChild.className='';
-               } else {
-                    // sino se lo agregamos
-                    element.firstElementChild.className+='a_verde';
-               }
+               // if (element.firstElementChild.className=='a_verde') {
+               //      element.firstElementChild.className='';
+               // } else {
+               //      // sino se lo agregamos
+               //      element.firstElementChild.className+='a_verde';
+               // }
 
                if (array_desdeHasta.length<=1){
                     console.log(array_desdeHasta.length); 
@@ -42,6 +42,14 @@ const generaEventosA_Button=()=>{
                }
                console.log ('desdehasta');
                console.log (array_desdeHasta);
+               allBotones.forEach(unBoton => {
+                    if (unBoton.id==array_desdeHasta[0] || unBoton.id==array_desdeHasta[1]){
+                         console.log ('uno');
+                         unBoton.firstElementChild.className='a_verde'
+                    } else {
+                         unBoton.firstElementChild.classList.remove("a_verde")
+                    }
+               });
           });
      });
      
