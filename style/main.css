@@ -123,12 +123,64 @@ kbd {
   background-color: red;
 }
 
-.group2, .group3, .group4 {
+.primer .line1 .group2, .primer .line1 .group3, .primer .line1 .group4 {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
   -ms-flex-wrap: nowrap;
       flex-wrap: nowrap;
+}
+
+.tercer .line1 {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+.tercer .line2 {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-pack: end;
+      -ms-flex-pack: end;
+          justify-content: flex-end;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  background-color: greenyellow;
+}
+
+.tercer .line2 .group1 {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+.line3 {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.line3 .group1 {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
 }
 
 .mostrarTeclado {
@@ -139,5 +191,57 @@ kbd {
 
 .ocultarTeclado {
   display: none;
+}
+
+.dobleAlto {
+  padding: 15px 6px;
+}
+
+section {
+  background-color: #f0f0f0;
+  width: 100%;
+  height: 30vh;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+section .presionaJunto {
+  margin-bottom: 10px;
+  background-color: #54a6b4;
+  border-radius: 10px 10px;
+}
+
+section .presionaJunto a {
+  text-decoration: none;
+  color: black;
+  padding: 15px;
+  line-height: 2rem;
+}
+
+section .presionaJunto:hover {
+  background-color: #468792;
+  -webkit-box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+          box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+}
+
+section .inputs {
+  margin: 20px auto;
+}
+
+.a_verde {
+  background-color: #0a5e74;
+  -webkit-box-shadow: rgba(0, 0, 0, 0.315) 0px 3px 8px;
+          box-shadow: rgba(0, 0, 0, 0.315) 0px 3px 8px;
+  font-size: 1.3rem;
 }
 /*# sourceMappingURL=main.css.map */

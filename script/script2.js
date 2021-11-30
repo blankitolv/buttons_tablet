@@ -44,7 +44,7 @@ buttonSendMacro.addEventListener('click',(e)=>{
 const addToBaseScriptRealMacro=(paramMacro)=>{
      let funcMacro='';
      paramMacro.forEach(tecla => {
-          funcMacro+=`teclado.press(Keycode.${tecla})\n\t\ttime.sleep(0.1)\n\t\tteclado.release(Keycode.${tecla})\n\t\ttime.sleep(0.1)\n\t\t`;
+          funcMacro+=`teclado.press(Keycode.${tecla})\n\t\tteclado.release(Keycode.${tecla})\n\t\t`;
      });
      containerMacros[position-1]=funcMacro;
      // macro=[];
