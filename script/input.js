@@ -17,7 +17,8 @@ const cant_pulsaciones=()=>{
           cant_teclas.removeChild(cant_teclas.firstChild);
      }
      cant_teclas.innerHTML=`<p>${document.querySelectorAll('.a_button').length}</p>`
-     generaEventosA_Button();
+
+     generaEventosA_Button()
 }
 
 

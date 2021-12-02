@@ -147,7 +147,7 @@
           "id":"56",
           "keyCode":"FORWARD_SLASH",
           "comment":"/",
-          "ekey":"/"
+          "ekey":["/"]
      },
      {
           "id":"42",
