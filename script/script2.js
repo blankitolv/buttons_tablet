@@ -1,5 +1,6 @@
 let bdKeyMap=[];
 let macro=[];
+// va a contener todos los macros, va a tener el largo igual a la cantidad de botones que tenga la botonera
 let containerMacros=[];
 // base de datos
 fetch ('../bdKeyMap.json')
@@ -46,11 +47,13 @@ const addToBaseScriptRealMacro=(paramMacro)=>{
      paramMacro.forEach(tecla => {
           funcMacro+=`teclado.press(Keycode.${tecla})\n\t\tteclado.release(Keycode.${tecla})\n\t\t`;
      });
+
      containerMacros[position-1]=funcMacro;
      // macro=[];
      noSelection()
      nuevaSeleccion();
 }
+
 // **************************************************************
 // FUNCIONES DE TECLADO
 let buttonSendFunction=document.querySelector('#buttonSendFunction');
@@ -82,6 +85,7 @@ const addToBaseScript=(parammacro)=>{
      noSelection()
      console.log (macro.length);
 }
+// oculta la posibilidad de que vuelva a establecer la misma macro
 const noSelection=()=>{
      let keyCaps=document.querySelectorAll('input[name="keyCaps"]')
      keyCaps.forEach(tecla => {

@@ -1,6 +1,7 @@
 let inputKey=document.querySelector('#inputKey');
 let consola=document.querySelector('.consola')
 let cant_teclas=document.querySelector('.cant_teclas')
+let containerMacros=[];
 
 //captura el evento keydown del teclado [inputs]
 inputKey.addEventListener('keydown',(e)=>{
@@ -17,7 +18,6 @@ const cant_pulsaciones=()=>{
           cant_teclas.removeChild(cant_teclas.firstChild);
      }
      cant_teclas.innerHTML=`<p>${document.querySelectorAll('.a_button').length}</p>`
-
      generaEventosA_Button()
 }
 
@@ -25,13 +25,13 @@ const cant_pulsaciones=()=>{
 //global
 let array_desdeHasta=[];
 
-
 const generaEventosA_Button=()=>{
      let allBotones = document.querySelectorAll('.a_button');
      allBotones.forEach(element => {
-          element.addEventListener('click',()=>{
+          element.addEventListener('click',(e)=>{
                // array_desdeHasta va a tener 2 posiciones
                // si es igual a 1 agrega
+               e.preventDefault();
                if (array_desdeHasta.length<=1){
                     if (element.id==array_desdeHasta[0]) {
                          array_desdeHasta.pop();
@@ -89,7 +89,8 @@ const generaEventosA_Button=()=>{
 
 // selecciona los botones que están seleccionados
 let pressJuntos=document.querySelector('#pressJuntos');
-pressJuntos.addEventListener('click',()=>{
+pressJuntos.addEventListener('click',(e)=>{
+     e.preventDefault();
      let allBotones = document.querySelectorAll('.a_button');
      let cant=0;
      allBotones.forEach(element => {
@@ -116,14 +117,206 @@ fetch ('../bdKeyMapInput.json')
 .then (data => {
      setTimeout(() => {
           allDataKeyboard=data;
-          finalmente()
+          // finalmente()
      }, 1000);
 })
 
-function finalmente() {
-     allDataKeyboard.forEach(ele => {
-          console.log (ele.ekey.length);
-     })
+// ************************************************
+let text_incrustado=''
+
+const convert_str_to_ecodes=()=>{
+     let allBotones = document.querySelectorAll('.a_button');
+     // arreglo de todas las keyCodes
+     let allParseKeycodes=[];
+     //busca: en base a todos los botones, en toda la BD en la key -> EKEY[]
+     allBotones.forEach(element => {
+          let noEntry=false;
+          allDataKeyboard.forEach(ele => {
+               // console.log (ele.ekey.length);
+               for (let i=0; i<ele.ekey.length;i++){
+                    if (element.firstChild.innerHTML==ele.ekey[i] && noEntry==false){
+                         allParseKeycodes.push(ele.keyCode);
+                         noEntry=true;
+                    }
+               }
+          })
+     });
+     return allParseKeycodes;
+}
+let posicion=null;
+let keyCaps2 = document.querySelectorAll('input[name="keyCaps2"]')
+     keyCaps2.forEach(element => {
+          element.addEventListener('click',()=>{
+               console.log(element.id);
+               posicion=element.id;
+          })
+     });
+
+let finaliza2=document.querySelector('#finaliza2')
+finaliza2.addEventListener('click',()=>{
+     let allBotones = document.querySelectorAll('.a_button');
+     let allKeyCodes = convert_str_to_ecodes();
+     let contador=0;
+     let macro='';
+     let bandera=false;
+
+     allKeyCodes.forEach(element => {
+          if ( contador<parseInt(array_desdeHasta[0]) || contador>parseInt(array_desdeHasta[1]) || array_desdeHasta.length==0 ){
+               if ( contador == 0 ) {
+                    macro+=`\t\t`
+               }
+               macro+=`teclado.press(Keycode.${element})\n\t\tteclado.release(Keycode.${element})\n\t\t`;
+          } else {
+               if (bandera==false) {
+                    if (contador==0) {
+                         macro+=`\t\t`
+                    }
+                    macro+=`teclado.press(`
+                    for ( let i = parseInt(array_desdeHasta[0]); i <= parseInt(array_desdeHasta[1]) ;i++ ) {
+                         macro+=`Keycode.${allKeyCodes[i]}`
+                         //si es el final de escribir la función entonces escribe \n\t\t
+                         if ( i == parseInt(array_desdeHasta[1]) ){
+                              macro+=`)\n\t\t`
+                         } else {
+                              macro+=', '
+                         }
+                    }
+                    macro+=`teclado.release(`
+                    for ( let i = parseInt(array_desdeHasta[0]); i <= parseInt(array_desdeHasta[1]) ;i++ ) {
+                         macro+=`Keycode.${allKeyCodes[i]}`
+                         //si es el final de escribir la función entonces escribe \n\t\t
+                         if ( i == parseInt(array_desdeHasta[1]) ){
+                              macro+=`)\n\t\t`
+                         } else {
+                              macro+=', '
+                         }
+                    }
+                    bandera=true;
+               }
+          }
+          contador++;
+     });
+     console.log (macro);
+     if (posicion==null)   {
+          alert('you need to press a available keycap to establish macro')
+     } else {
+          containerMacros[posicion-1]=macro;
+          let bban=false;
+          keyCaps2.forEach(tecla => {
+               if (tecla.id==posicion) {
+                    tecla.disabled=true;
+                    cleanAll();
+                    
+               }
+               
+               if ( parseInt(tecla.id)==parseInt(posicion)+1 && bban==false ) {
+                    tecla.checked=true;
+                    posicion=String(parseInt(posicion)+1);
+                    bban=true;
+               }
+          });
+
+     }
+})
+let seeAllMacro=document.querySelector('#seeAllMacro').addEventListener('click',()=>{
+     containerMacros.forEach(element => {
+          console.log (element);
+     });
+})
+const cleanAll=()=>{
+     let consola=document.querySelector('.consola')
+     while(consola.firstChild){
+          consola.removeChild(consola.firstChild);
+     }
+     array_desdeHasta=[];
+     
+};
+// ----------------------------------- GUARDADO DE LOS MACROS 
+
+
+// guarda el texto, recibe como parametro el texto YA ARMADO (arriba)
+function download(filename, texto) {
+     let element = document.createElement('a');
+     element.setAttribute('href', 'data:text/plain;charset=utf-8,' + encodeURIComponent(texto));
+     element.setAttribute('download', filename);
+ 
+     element.style.display = 'none';
+     document.body.appendChild(element);
+     element.click();
 }
 
-// print screen no tiene e.key
+
+// nombre del archivo a exportar
+let nombreArchivo= 'code.py'
+
+//captura boton finalizar
+let endRecord = document.querySelector('#endRecord');
+endRecord.addEventListener('click',()=> {
+     for (let i=0;i<=8;i++){
+          if (containerMacros[i]!=undefined){
+               texto+=`\tif boton${i+1}.value:\r${containerMacros[i]}\n`
+          }
+     }
+     let filename = `${nombreArchivo}`;
+     download(filename, texto);
+})
+
+
+// texto Base
+texto=`
+import time \n
+import digitalio \n
+import board \n
+import usb_hid \n
+from adafruit_hid.keyboard import Keyboard \n
+from adafruit_hid.keycode import Keycode \n
+\n
+boton1_pin = board.GP28\n
+boton2_pin = board.GP2\n
+boton3_pin = board.GP5\n
+boton4_pin = board.GP27\n
+boton5_pin = board.GP11\n
+boton6_pin = board.GP7\n
+boton7_pin = board.GP19\n
+boton8_pin = board.GP17\n
+boton9_pin = board.GP14\n
+\n
+teclado = Keyboard(usb_hid.devices)\n
+boton1= digitalio.DigitalInOut(boton1_pin)\n
+boton1.direction = digitalio.Direction.INPUT\n
+boton1.pull = digitalio.Pull.DOWN\n
+\n
+boton2= digitalio.DigitalInOut(boton2_pin)\n
+boton2.direction = digitalio.Direction.INPUT\n
+boton2.pull = digitalio.Pull.DOWN\n
+\n
+boton3= digitalio.DigitalInOut(boton3_pin)\n
+boton3.direction = digitalio.Direction.INPUT\n
+boton3.pull = digitalio.Pull.DOWN\n
+\n
+boton4= digitalio.DigitalInOut(boton4_pin)\n
+boton4.direction = digitalio.Direction.INPUT\n
+boton4.pull = digitalio.Pull.DOWN\n
+\n
+boton5= digitalio.DigitalInOut(boton5_pin)\n
+boton5.direction = digitalio.Direction.INPUT\n
+boton5.pull = digitalio.Pull.DOWN\n
+\n
+boton6= digitalio.DigitalInOut(boton6_pin)\n
+boton6.direction = digitalio.Direction.INPUT\n
+boton6.pull = digitalio.Pull.DOWN\n
+\n
+boton7= digitalio.DigitalInOut(boton7_pin)\n
+boton7.direction = digitalio.Direction.INPUT\n
+boton7.pull = digitalio.Pull.DOWN\n
+\n
+boton8= digitalio.DigitalInOut(boton8_pin)\n
+boton8.direction = digitalio.Direction.INPUT\n
+boton8.pull = digitalio.Pull.DOWN\n
+\n
+boton9= digitalio.DigitalInOut(boton9_pin)\n
+boton9.direction = digitalio.Direction.INPUT\n
+boton9.pull = digitalio.Pull.DOWN\n
+\n
+while True:
+`;
