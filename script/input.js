@@ -153,7 +153,8 @@ let keyCaps2 = document.querySelectorAll('input[name="keyCaps2"]')
      });
 
 let finaliza2=document.querySelector('#finaliza2')
-finaliza2.addEventListener('click',()=>{
+finaliza2.addEventListener('click',(e)=>{
+     e.preventDefault();
      let allBotones = document.querySelectorAll('.a_button');
      let allKeyCodes = convert_str_to_ecodes();
      let contador=0;
@@ -251,7 +252,8 @@ let nombreArchivo= 'code.py'
 
 //captura boton finalizar
 let endRecord = document.querySelector('#endRecord');
-endRecord.addEventListener('click',()=> {
+endRecord.addEventListener('click',(e)=> {
+     e.preventDefault();
      for (let i=0;i<=8;i++){
           if (containerMacros[i]!=undefined){
                texto+=`\tif boton${i+1}.value:\r${containerMacros[i]}\n`
