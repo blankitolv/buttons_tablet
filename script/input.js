@@ -1,8 +1,49 @@
 let inputKey=document.querySelector('#inputKey');
+inputKey.disabled=true;
+
+let btn_continuar= document.querySelector('#finaliza2').disabled=true;
+let btn_endRecord= document.querySelector('#endRecord').disabled=true;
+
+let floatingTextarea2 = document.querySelector('#floatingTextarea2').disabled=true;
+
 let consola=document.querySelector('.consola')
+//cantidad de teclas presionadas en macro
 let cant_teclas=document.querySelector('.cant_teclas')
+
+// almacena las macros armadas
 let containerMacros=[];
 
+let listMacro=document.querySelector('.listMacro');
+let cant_teclas_dispositivo=9;
+// for (let j=0;j<cant_teclas_dispositivo;j++){
+//      etiquetaP=document.createElement('P');
+//      etiquetaP.innerHTML=`
+//           ${j+1} &ltEmpty&gt
+//      `
+//      listMacro.appendChild(etiquetaP);
+
+// }
+let comentario=''
+let tbody=document.querySelector('.tbody');
+     for (let j=0;j<cant_teclas_dispositivo;j++){ 
+          tbody.innerHTML+=`
+          <tr class="trr">
+               <td>
+                    ${j+1}
+               </td>
+               <td>
+                    ${j+1}&ltEmpty&gt
+               </td>
+
+          </tr>
+          `
+     }
+
+/* 
+& becomes &amp;
+< becomes &lt;
+> becomes &gt;
+*/
 //captura el evento keydown del teclado [inputs]
 inputKey.addEventListener('keydown',(e)=>{
      e.preventDefault();
@@ -145,12 +186,29 @@ const convert_str_to_ecodes=()=>{
 }
 let posicion=null;
 let keyCaps2 = document.querySelectorAll('input[name="keyCaps2"]')
-     keyCaps2.forEach(element => {
-          element.addEventListener('click',()=>{
-               console.log(element.id);
-               posicion=element.id;
-          })
+keyCaps2.forEach(element => {
+     element.addEventListener('click',()=>{
+          inputKey=document.querySelector('#inputKey');
+          inputKey.disabled=false;
+          btn_continuar= document.querySelector('#finaliza2').disabled=false;
+          btn_endRecord= document.querySelector('#endRecord').disabled=false;
+          floatingTextarea2 = document.querySelector('#floatingTextarea2').disabled=false;
+
+          console.log(element.id);
+          posicion=element.id;
+     })
+});
+const mostrarMacroUsuario=(allBotones,pos)=>{
+     let trr=document.querySelectorAll('.trr');
+     let aux=' ';
+     console.log('botones');
+     allBotones.forEach(element => {
+          aux+=`${element.firstChild.innerHTML} `
      });
+     console.log(aux);
+     trr[pos-1].lastElementChild.innerHTML=`${aux}`;
+     comentario+=`# ${aux} \n`
+};
 
 let finaliza2=document.querySelector('#finaliza2')
 finaliza2.addEventListener('click',(e)=>{
@@ -162,16 +220,19 @@ finaliza2.addEventListener('click',(e)=>{
      let bandera=false;
 
      allKeyCodes.forEach(element => {
+          // macro
           if ( contador<parseInt(array_desdeHasta[0]) || contador>parseInt(array_desdeHasta[1]) || array_desdeHasta.length==0 ){
                if ( contador == 0 ) {
                     macro+=`\t\t`
                }
                macro+=`teclado.press(Keycode.${element})\n\t\tteclado.release(Keycode.${element})\n\t\t`;
           } else {
+               // funcion
                if (bandera==false) {
                     if (contador==0) {
                          macro+=`\t\t`
                     }
+                    // función presiona las teclas
                     macro+=`teclado.press(`
                     for ( let i = parseInt(array_desdeHasta[0]); i <= parseInt(array_desdeHasta[1]) ;i++ ) {
                          macro+=`Keycode.${allKeyCodes[i]}`
@@ -182,12 +243,13 @@ finaliza2.addEventListener('click',(e)=>{
                               macro+=', '
                          }
                     }
+                    // función suelta las teclas
                     macro+=`teclado.release(`
                     for ( let i = parseInt(array_desdeHasta[0]); i <= parseInt(array_desdeHasta[1]) ;i++ ) {
                          macro+=`Keycode.${allKeyCodes[i]}`
                          //si es el final de escribir la función entonces escribe \n\t\t
                          if ( i == parseInt(array_desdeHasta[1]) ){
-                              macro+=`)\n\t\t`
+                              macro+=`)\n\t\ttime.sleep(0.1)\n\t\t`
                          } else {
                               macro+=', '
                          }
@@ -206,6 +268,7 @@ finaliza2.addEventListener('click',(e)=>{
           keyCaps2.forEach(tecla => {
                if (tecla.id==posicion) {
                     tecla.disabled=true;
+                    mostrarMacroUsuario( allBotones, parseInt(posicion) );
                     cleanAll();
                     
                }
@@ -254,7 +317,7 @@ let nombreArchivo= 'code.py'
 let endRecord = document.querySelector('#endRecord');
 endRecord.addEventListener('click',(e)=> {
      e.preventDefault();
-     for (let i=0;i<=8;i++){
+     for (let i=0;i<=cant_teclas_dispositivo-1;i++){
           if (containerMacros[i]!=undefined){
                texto+=`\tif boton${i+1}.value:\r${containerMacros[i]}\n`
           }
@@ -266,6 +329,7 @@ endRecord.addEventListener('click',(e)=> {
 
 // texto Base
 texto=`
+${comentario}
 import time \n
 import digitalio \n
 import board \n

@@ -198,9 +198,9 @@ kbd {
 }
 
 section {
+  position: relative;
   background-color: #f0f0f0;
   width: 100%;
-  height: 80vh;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -265,5 +265,36 @@ section .inputs {
 
 .a_button > a {
   display: none;
+}
+
+.box {
+  background-color: #3a3a3a;
+  padding: 15px;
+  border-radius: 10px 10px;
+}
+
+.box input[type=radio] {
+  cursor: crosshair;
+}
+
+main {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: reverse;
+      -ms-flex-direction: row-reverse;
+          flex-direction: row-reverse;
+  height: 100vh;
+}
+
+.inputs {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.inputs #floatingTextarea2 {
+  resize: none;
 }
 /*# sourceMappingURL=main.css.map */
